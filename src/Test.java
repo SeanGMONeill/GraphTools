@@ -6,10 +6,10 @@ public class Test {
 		
 		Graph graph = new Graph();
 		
-		graph.addVertex(new Vertex("A"));
-		graph.addVertex(new Vertex("B"));
-		graph.addVertex(new Vertex("C"));
-		graph.addVertex(new Vertex("D"));
+		graph.addVertex(new Vertex("A", graph));
+		graph.addVertex(new Vertex("B", graph));
+		graph.addVertex(new Vertex("C", graph));
+		graph.addVertex(new Vertex("D", graph));
 		
 		graph.addEdge(new Edge(graph.getVertexByName("A"), graph.getVertexByName("B")));
 		graph.addEdge(new Edge(graph.getVertexByName("B"), graph.getVertexByName("C")));

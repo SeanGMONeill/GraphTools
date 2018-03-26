@@ -62,4 +62,11 @@ public class Edge {
 	public String asString() {
 		return this.getVertexA().getName() + "," + this.getVertexB().getName() + "," + this.getWeight();
 	}
+	
+	/*
+	 * Returns true if one of the attached vertices is the argument
+	 */
+	public Boolean touchesVertex(Vertex vertex) {
+		return (vertexA == vertex || vertexB == vertex);
+	}
 }

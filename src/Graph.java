@@ -21,6 +21,13 @@ public class Graph {
 		edges.add(edge);
 	}
 	
+	public List<Edge> getEdges(){
+		return edges;
+	}
+	
+	public List<Vertex> getVertices(){
+		return vertices;
+	}
 	
 	public void saveToFile(String fileName) throws IOException {
 		
@@ -62,7 +69,7 @@ public class Graph {
 		String vertexLine = reader.readLine();
 		vertices = new ArrayList<Vertex>();
 		for(String vertex : vertexLine.split(",")) {
-			vertices.add(new Vertex(vertex));
+			vertices.add(new Vertex(vertex, this));
 		}
 		
 		
@@ -87,6 +94,18 @@ public class Graph {
 		}
 		
 		return null;
+	}
+
+	
+	public Boolean isConnected() {
+		
+		for(Vertex vertex : vertices) {
+			if(vertex.getDegree() == 0) {
+				return false;
+			}
+		}
+		
+		return true;
 	}
 	
 	
